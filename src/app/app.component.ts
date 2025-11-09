@@ -3,11 +3,10 @@ import { RouterOutlet } from '@angular/router';
 import { LandingPageComponent } from '@/app/landing-page/landing-page.component';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, LandingPageComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+    selector: 'app-root',
+    imports: [RouterOutlet, LandingPageComponent],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'ouishe-front';

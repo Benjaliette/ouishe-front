@@ -1,0 +1,69 @@
+main {
+  background-image: url('../../assets/paper-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+legend h2 {
+  margin: 0;
+  padding: 0 10px;
+  font-size: 2rem;
+}
+
+.auth-box {
+  width: 400px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+form {
+  .form-control {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+}
+
+.separator {
+  text-align: center;
+  margin: 20px 0;
+  font-weight: bold;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background-color: #000;
+  }
+
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
+  }
+}
+
+.redirect span {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  cursor: pointer;
+
+  &:hover {
+    font-size: 1.05rem;
+    color: black
+  }
+}

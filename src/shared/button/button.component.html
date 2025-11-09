@@ -1,3 +1,5 @@
-<button class="sketch-btn">
+<button  color="primary"
+  [type]="type()"
+  [routerLink]="isLink() ? link() : null">
   <ng-content></ng-content>
 </button>

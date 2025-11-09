@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
-import { LogoComponent } from '@/shared/logo/logo.component';
 import { NavbarComponent } from '@/shared/navbar/navbar.component';
+import { HeroBannerComponent } from '../../shared/hero-banner/hero-banner.component';
 
 @Component({
-  selector: 'app-landing-page',
-  standalone: true,
-  imports: [NavbarComponent],
-  templateUrl: './landing-page.component.html',
-  styleUrl: './landing-page.component.scss'
+    selector: 'app-landing-page',
+    imports: [NavbarComponent, HeroBannerComponent],
+    templateUrl: './landing-page.component.html',
+    styleUrl: './landing-page.component.scss'
 })
 export class LandingPageComponent {
 

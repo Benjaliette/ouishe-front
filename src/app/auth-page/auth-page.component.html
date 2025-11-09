@@ -1,0 +1,42 @@
+<main>
+  <fieldset class="auth-box">
+    <legend><h2>S'inscrire</h2></legend>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <app-form-group
+        label="Nom d'utilisateur"
+        name="username"
+        type="text"
+        errorText="Le nom d'utilisateur est requis."
+        [form]="loginForm"
+      />
+      <app-form-group
+        label="Email"
+        name="email"
+        type="text"
+        errorText="L'email est requis."
+        [form]="loginForm"
+      />
+      <app-form-group
+        label="Mot de passe"
+        name="password"
+        type="password"
+        errorText="Le mot de passe est requis."
+        [form]="loginForm"
+      />
+      <app-form-group
+        label="Confirmez le mot de passe"
+        name="password2"
+        type="password"
+        errorText="Veuillez confirmer le mot de passe."
+        [form]="loginForm"
+      />
+      <div class="form-control">
+        <app-button [type]="buttonType">Continuer</app-button>
+      </div>
+    </form>
+    <div class="separator">OU</div>
+    <div class="redirect">
+      Déjà un compte ? <span (click)="switchType()">Se connecter</span>
+    </div>
+  </fieldset>
+</main>

@@ -1,37 +1,37 @@
-button {
-  align-self:center;
-  background:transparent;
-  padding:0.8rem 1rem;
-  margin:0 1rem;
-  transition:all .5s ease;
-  color:#41403E;
-  letter-spacing:1px;
-  outline:none;
-  box-shadow: 20px 38px 34px -26px hsla(0,0%,0%,.2);
-  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-  border:2px solid #41403E;
-  padding-bottom: 0.5rem;
-  box-shadow: 0 2px 0 #000;
-  transition: padding 0.1s, box-shadow 0.1s, top 0.1s;
-  --line-color: #e0e0e0;
-  --line-spacing: 8px;
-  background-color: #f9f9f9;
-  background-image: linear-gradient(
-    to bottom,
-    var(--line-color) 1px,
-    transparent 1px
-  );
-  background-size: 100% var(--line-spacing);
-  cursor: pointer;
-  font-family: inherit;
-  font-weight: bold;
-}
+// button {
+//   align-self:center;
+//   background:transparent;
+//   padding:0.8rem 1rem;
+//   margin:0 1rem;
+//   transition:all .5s ease;
+//   color:#41403E;
+//   letter-spacing:1px;
+//   outline:none;
+//   box-shadow: 20px 38px 34px -26px hsla(0,0%,0%,.2);
+//   border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+//   border:2px solid #41403E;
+//   padding-bottom: 0.5rem;
+//   box-shadow: 0 2px 0 #000;
+//   transition: padding 0.1s, box-shadow 0.1s, top 0.1s;
+//   --line-color: #e0e0e0;
+//   --line-spacing: 8px;
+//   background-color: #f9f9f9;
+//   background-image: linear-gradient(
+//     to bottom,
+//     var(--line-color) 1px,
+//     transparent 1px
+//   );
+//   background-size: 100% var(--line-spacing);
+//   cursor: pointer;
+//   font-family: inherit;
+//   font-weight: bold;
+// }
 
-button:hover {
-  box-shadow: 0 2px 0 #000, 0 2px 0px 2px #000000;
-}
-button:active {
-  top: 4px;
-  padding-bottom: 0.2rem;
-  box-shadow: 0 1px 0 #000;
-}
+// button:hover {
+//   box-shadow: 0 2px 0 #000, 0 2px 0px 2px #000000;
+// }
+// button:active {
+//   top: 4px;
+//   padding-bottom: 0.2rem;
+//   box-shadow: 0 1px 0 #000;
+// }

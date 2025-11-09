@@ -1,0 +1,21 @@
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+  input {
+    font-family: "Indie Flower", cursive !important;
+  }
+
+  .error {
+    color: red;
+    font-size: 0.8rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+
+    &.visible {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
