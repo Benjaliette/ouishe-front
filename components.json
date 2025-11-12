@@ -1,0 +1,13 @@
+{
+  "style": "css",
+  "packageManager": "npm",
+  "tailwind": {
+    "css": "src/styles.scss",
+    "baseColor": "zinc",
+    "cssVariables": true
+  },
+  "aliases": {
+    "components": "src/shared",
+    "utils": "src/shared/utils"
+  }
+}

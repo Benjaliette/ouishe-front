@@ -1,16 +1,47 @@
-import { ButtonType } from '@/models/ButtonType';
-import { Component, computed, input } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { ChangeDetectionStrategy, Component, computed, ElementRef, inject, input, ViewEncapsulation } from '@angular/core';
+import type { ClassValue } from 'clsx';
+
+import { buttonVariants, ZardButtonVariants } from './button.variants';
+import { mergeClasses, transform } from '@/shared/utils/merge-classes';
+import { ZardIconComponent } from '../icon/icon.component';
 
 @Component({
-    selector: 'app-button',
-    imports: [RouterLink],
-    templateUrl: './button.component.html',
-    styleUrls: ['./button.component.scss']
+  selector: 'z-button, button[z-button], a[z-button]',
+  exportAs: 'zButton',
+  standalone: true,
+  imports: [ZardIconComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,
+  template: `
+    @if (zLoading()) {
+      <z-icon zType="loader-circle" class="animate-spin" />
+    }
+    <ng-content></ng-content>
+  `,
+  host: {
+    '[class]': 'classes()',
+  },
 })
-export class ButtonComponent {
-  readonly type = input<ButtonType>();
-  readonly link = input<string|null>();
+export class ZardButtonComponent {
+  readonly zType = input<ZardButtonVariants['zType']>('default');
+  readonly zSize = input<ZardButtonVariants['zSize']>('default');
+  readonly zShape = input<ZardButtonVariants['zShape']>('default');
 
-  readonly isLink = computed<boolean>(() => this.type() === ButtonType.Link && this.link() != null);
+  readonly class = input<ClassValue>('');
+
+  readonly zFull = input(false, { transform });
+  readonly zLoading = input(false, { transform });
+
+  protected readonly classes = computed(() =>
+    mergeClasses(
+      buttonVariants({
+        zType: this.zType(),
+        zSize: this.zSize(),
+        zShape: this.zShape(),
+        zFull: this.zFull(),
+        zLoading: this.zLoading(),
+      }),
+      this.class(),
+    ),
+  );
 }

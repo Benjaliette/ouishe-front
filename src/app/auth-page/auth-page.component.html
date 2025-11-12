@@ -1,42 +1,26 @@
-<main>
-  <fieldset class="auth-box">
-    <legend><h2>S'inscrire</h2></legend>
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <app-form-group
-        label="Nom d'utilisateur"
-        name="username"
-        type="text"
-        errorText="Le nom d'utilisateur est requis."
-        [form]="loginForm"
-      />
-      <app-form-group
-        label="Email"
-        name="email"
-        type="text"
-        errorText="L'email est requis."
-        [form]="loginForm"
-      />
-      <app-form-group
-        label="Mot de passe"
-        name="password"
-        type="password"
-        errorText="Le mot de passe est requis."
-        [form]="loginForm"
-      />
-      <app-form-group
-        label="Confirmez le mot de passe"
-        name="password2"
-        type="password"
-        errorText="Veuillez confirmer le mot de passe."
-        [form]="loginForm"
-      />
-      <div class="form-control">
-        <app-button [type]="buttonType">Continuer</app-button>
+<div class="flex min-h-screen flex-col lg:flex-row">
+  <aside class="hidden flex-1 items-center justify-center aside-bg p-8 lg:flex border-r-2">
+    <img src="assets/login.svg">
+  </aside>
+  <div class="flex flex-1 items-center justify-center bg-background p-4 sm:p-8">
+    <div class="w-full max-w-md space-y-6 sm:space-y-8">
+      <div class="text-center">
+        <a routerLink="/" class="cursor-pointer">
+          <app-logo />
+        </a>
+        <p class="mt-2 text-sm text-muted-foreground sm:text-base">Identifiez vous pour continuer</p>
       </div>
-    </form>
-    <div class="separator">OU</div>
-    <div class="redirect">
-      Déjà un compte ? <span (click)="switchType()">Se connecter</span>
+
+      <z-card class="p-4 sm:p-6 lg:p-8">
+        @if (isLoginMode()) {
+          <app-login-form></app-login-form>
+        }
+      </z-card>
+
+      <p class="text-center text-sm text-muted-foreground">
+        Nouveau sur Ouishe ?
+        <a z-button zType="link" href="#" class="px-0">Créez votre compte</a>
+      </p>
     </div>
-  </fieldset>
-</main>
+  </div>
+</div>
