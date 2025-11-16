@@ -11,5 +11,11 @@ export const routes: Routes = [
     loadComponent() {
       return import('@/app/auth-page/auth-page.component').then(m => m.AuthPageComponent);
     },
+  },
+  {
+    path: 'users/:userId/wishes',
+    loadComponent() {
+      return import('@/app/wishes-page/wishes-page.component').then(m => m.WishesPageComponent);
+    },
   }
 ];

@@ -20,8 +20,6 @@ import { ZardButtonComponent } from '@/shared/button/button.component';
 export class LoginFormComponent {
   protected readonly isLoading = signal(false);
 
-  isLoginMode = signal(false);
-
   loginForm = new FormGroup({
     email: new FormControl(''),
     password: new FormControl(''),
@@ -29,10 +27,5 @@ export class LoginFormComponent {
 
   onSubmit() {
     console.log(this.loginForm.value);
-  }
-
-  switchType() {
-    // TODO: implémenter le switch entre login et signup
-    this.isLoginMode.update(value => !value);
   }
 }

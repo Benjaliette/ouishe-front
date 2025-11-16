@@ -8,19 +8,38 @@
         <a routerLink="/" class="cursor-pointer">
           <app-logo />
         </a>
-        <p class="mt-2 text-sm text-muted-foreground sm:text-base">Identifiez vous pour continuer</p>
+        <p class="mt-2 text-sm text-muted-foreground sm:text-base">
+          @if (isLoginMode()) {
+            Identifiez vous pour continuer
+          } @else {
+            Créez un compte pour continuer
+          }
+        </p>
       </div>
 
       <z-card class="p-4 sm:p-6 lg:p-8">
         @if (isLoginMode()) {
-          <app-login-form></app-login-form>
+          <app-login-form />
+        } @else {
+          <app-signup-form />
         }
       </z-card>
 
-      <p class="text-center text-sm text-muted-foreground">
-        Nouveau sur Ouishe ?
-        <a z-button zType="link" href="#" class="px-0">Créez votre compte</a>
-      </p>
+      @if (isLoginMode()) {
+          <p class="text-center text-sm text-muted-foreground">
+            Nouveau sur Ouishe ?
+            <span class="px-0 cursor-pointer text-black" (click)="switchType()">
+              Créez votre compte
+            </span>
+          </p>
+        } @else {
+          <p class="text-center text-sm text-muted-foreground">
+            Vous avez déjà un compte ?
+            <span class="px-0 cursor-pointer text-black" (click)="switchType()">
+              Identifiez vous
+            </span>
+          </p>
+        }
     </div>
   </div>
 </div>
