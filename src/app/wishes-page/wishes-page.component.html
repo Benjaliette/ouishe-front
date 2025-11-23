@@ -1,1 +1,74 @@
-<p>wishes-page works!</p>
+<z-layout class="min-h-screen overflow-hidden">
+  <app-navbar class="bg-white border-b"></app-navbar>
+  <z-layout class="grow">
+    <z-sidebar [zWidth]="250" [zCollapsible]="true" [zCollapsed]="sidebarCollapsed()" [zCollapsedWidth]="70" (zCollapsedChange)="onCollapsedChange($event)" class="!p-0">
+      <nav [class]="'flex flex-col h-full overflow-hidden ' + (sidebarCollapsed() ? 'gap-1 p-1 pt-4' : 'gap-4 p-4')">
+        <z-sidebar-group>
+          @for (item of mainMenuItems(); track item.label) {
+            <button
+              z-button [zType]="item.buttonType"
+              [class]="sidebarCollapsed() ? 'justify-center' : 'justify-start'"
+              [zTooltip]="sidebarCollapsed() ? item.label : ''"
+              zPosition="right"
+              (click)="onMenuItemClick(item)"
+            >
+              <z-icon [zType]="item.icon" [class]="sidebarCollapsed() ? '' : ' mr-2'"></z-icon>
+              @if (!sidebarCollapsed()) {
+                <span>{{ item.label }}</span>
+              }
+            </button>
+          }
+        </z-sidebar-group>
+
+        <div class="mt-auto">
+          <div
+            z-menu
+            [zMenuTriggerFor]="userMenu"
+            zPlacement="rightBottom"
+            [class]="'flex items-center justify-center gap-2 cursor-pointer rounded-md hover:bg-accent ' + (sidebarCollapsed() ? 'p-0 m-2' : 'p-2')"
+          >
+            <z-avatar zSrc="https://zardui.com/images/avatar/imgs/avatar_image.jpg" zAlt="Zard UI" />
+
+            @if (!sidebarCollapsed()) {
+              <div>
+                <span class="font-medium">zardui</span>
+                <div class="text-xs">test&#64;zardui.com</div>
+              </div>
+
+              <z-icon zType="chevrons-up-down" class="ml-auto" />
+            }
+          </div>
+
+          <ng-template #userMenu>
+            <div z-menu-content class="w-48">
+              <button z-menu-item>
+                <z-icon zType="user" class="mr-2" />
+                Profile
+              </button>
+              <button z-menu-item>
+                <z-icon zType="settings" class="mr-2" />
+                Settings
+              </button>
+              <z-divider zSpacing="sm" />
+              <button z-menu-item>
+                <z-icon zType="log-out" class="mr-2" />
+                Logout
+              </button>
+            </div>
+          </ng-template>
+        </div>
+      </nav>
+    </z-sidebar>
+    <z-content>
+      @if (section() === 'Listes') {
+        <app-wishlists-page [wishes]="wishes()"/>
+      } @else if (section() === 'Amis') {
+        <app-friends-page />
+      } @else if (section() === 'Idées cadeaux') {
+        <app-gifts-page />
+      } @else {
+        <app-wishlists-page />
+      }
+    </z-content>
+  </z-layout>
+</z-layout>

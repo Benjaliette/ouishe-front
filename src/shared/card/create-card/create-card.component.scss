@@ -1,0 +1,28 @@
+.create__card {
+
+  .create__card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    aspect-ratio: 5/4;
+  }
+
+  border-style: dashed;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: var(--secondary);
+    border-color: var(--primary);
+
+    z-icon {
+      color: var(--zard-color-icon);
+    }
+
+    span {
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+}

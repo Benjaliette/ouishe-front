@@ -1,0 +1,19 @@
+<form [formGroup]="form" class="grid gap-4">
+  <div class="grid gap-3">
+    <label
+      for="title"
+      class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
+      >Nom de la liste</label
+    >
+    <input z-input formControlName="title" />
+  </div>
+
+  <div class="grid gap-3">
+    <label
+      for="description"
+      class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
+      >Description de la liste</label
+    >
+    <input z-input formControlName="description" />
+  </div>
+</form>

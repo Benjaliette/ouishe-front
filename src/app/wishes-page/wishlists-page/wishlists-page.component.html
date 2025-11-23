@@ -1,0 +1,16 @@
+<h1>Mes listes</h1>
+<div class="h-[300px] w-full mt-6">
+  <z-tab-group>
+    <z-tab label="Actives">
+      <div class="wishlist__grid">
+        <app-create-card></app-create-card>
+        @for (wish of wishes(); track wish.id) {
+          <app-wishlist-card [wish]="wish"/>
+        }
+      </div>
+    </z-tab>
+    <z-tab label="Archivées">
+      <p>Content of the second tab</p>
+    </z-tab>
+  </z-tab-group>
+</div>

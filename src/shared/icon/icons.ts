@@ -67,6 +67,10 @@ import {
   type LucideIconData,
   Circle,
   Inbox,
+  CirclePlus,
+  Share,
+  Pencil,
+  Trash
 } from 'lucide-angular';
 
 export const ZARD_ICONS = {
@@ -92,6 +96,7 @@ export const ZARD_ICONS = {
   'triangle-alert': TriangleAlert,
   circle: Circle,
   'circle-check': CircleCheck,
+  'circle-plus': CirclePlus,
   'circle-x': CircleX,
   'circle-dollar-sign': CircleDollarSign,
   ban: Ban,
@@ -124,6 +129,7 @@ export const ZARD_ICONS = {
   heart: Heart,
   star: Star,
   zap: Zap,
+  share: Share,
   shield: Shield,
   puzzle: Puzzle,
   layers: Layers,
@@ -137,6 +143,8 @@ export const ZARD_ICONS = {
   monitor: Monitor,
   smartphone: Smartphone,
   tablet: Tablet,
+  pencil: Pencil,
+  trash: Trash
 } as const satisfies Record<string, LucideIconData>;
 
 export declare type ZardIcon = keyof typeof ZARD_ICONS | LucideIconData;

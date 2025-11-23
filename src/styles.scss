@@ -17,7 +17,7 @@
   --popover-foreground: oklch(0.141 0.005 285.823);
   --primary: oklch(0.21 0.006 285.885);
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.967 0.001 286.375);
+  --secondary: oklch(90.06% 0.0001 271.152);
   --secondary-foreground: oklch(0.21 0.006 285.885);
   --muted: oklch(0.967 0.001 286.375);
   --muted-foreground: oklch(0.552 0.016 285.938);
@@ -134,10 +134,6 @@ body {
   font-size: 14px;
   letter-spacing: -0.1px;
   line-height: 22.4px;
-  background-image: url('./assets/landing-background.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 h1 {

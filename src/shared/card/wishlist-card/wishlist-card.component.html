@@ -1,0 +1,19 @@
+<div class="wish__card wishlist__card">
+  <div class="wishlist__card-banner">
+    <img [src]="bannerImg" alt="Image de la carte de liste de souhaits" />
+  </div>
+  <div class="wishlist__card-content">
+      <div>
+        <h2>{{ wish()?.title }}</h2>
+        <p>{{ wish()?.createdAt | date: 'dd/MM/yyyy' }}</p>
+      </div>
+      <button z-button zType="outline" z-dropdown [zDropdownMenu]="menu">
+        <z-icon zType="ellipsis" />
+      </button>
+      <z-dropdown-menu-content #menu="zDropdownMenuContent" class="w-56">
+        <z-dropdown-menu-item><z-icon zType="share" />Partager</z-dropdown-menu-item>
+        <z-dropdown-menu-item><z-icon zType="pencil" />Editer</z-dropdown-menu-item>
+        <z-dropdown-menu-item><z-icon zType="trash" />Supprimer</z-dropdown-menu-item>
+      </z-dropdown-menu-content>
+  </div>
+</div>

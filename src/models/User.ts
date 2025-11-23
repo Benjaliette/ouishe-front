@@ -1,3 +1,5 @@
+import { Wish } from "./Wish";
+
 export enum UserRole {
   USER = "user",
   ADMIN = "admin",
@@ -12,6 +14,7 @@ export interface User {
   avatarUrl?: string;
   role?: UserRole;
   isActive?: boolean;
+  wishes?: Wish[];
   createdAt?: string;
   updatedAt?: string;
 }

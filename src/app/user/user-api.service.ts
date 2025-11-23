@@ -19,4 +19,17 @@ export class UserApiService {
     this.users.push(newUser);
     return of(newUser).pipe(delay(500));
   }
+
+  findUser(user: User): Observable<User> {
+    const foundUser: User = {
+      id: "1",
+      wishes: [
+        { id: "1", title: "Birthday Wishlist", description: "My birthday wishes", createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() },
+        { id: "2", title: "Christmas Wishlist", description: "My Christmas wishes", createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() }
+      ],
+      ...user
+    }
+
+    return of(foundUser).pipe(delay(500));
+  }
 }
